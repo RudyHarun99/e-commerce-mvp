@@ -1,0 +1,8 @@
+.btn {
+  width: rem-calc(147);
+  height: rem-calc(40);
+  padding: rem-calc(8);
+  gap: rem-calc(8);
+  border-radius: get-radius('radius-full');
+  background: get-color('primary', 300);
+}

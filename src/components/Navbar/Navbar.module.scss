@@ -1,0 +1,15 @@
+.container {
+  height: rem-calc(84);
+  display: flex;
+  justify-content: space-between;
+  gap: rem-calc(16);
+  align-items: center;
+  position: relative;
+  padding: 0 rem-calc(120);
+  box-shadow: 0 0 rem-calc(20) 0 #CBCACA40;
+
+  .imageCart {
+    height: rem-calc(24);
+    width: rem-calc(24);
+  }
+}

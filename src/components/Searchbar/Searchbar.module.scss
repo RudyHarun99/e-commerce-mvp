@@ -1,0 +1,21 @@
+.searchbar {
+  width: rem-calc(517);
+  height: rem-calc(44);
+  gap: 6px;
+  border-radius: get-radius('radius-xl');
+  border-width: 1px;
+  padding: rem-calc(8) rem-calc(16);
+  border: 1px solid get-color('neutral', 300);
+  display: flex;
+
+  .searchImage {
+    width: rem-calc(24);
+    height: rem-calc(24);
+  }
+
+  .searchInput {
+    width: 100%;
+    color: get-color('neutral', 500);
+    @include typography('text-sm', 400);
+  }
+}
