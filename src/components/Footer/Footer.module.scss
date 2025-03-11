@@ -1,0 +1,7 @@
+.footerContainer {
+  height: rem-calc(438);
+  padding: get-spacing('spacing-8xl') rem-calc(120);
+  border-top: 1px solid get-color('neutral', 300);
+  display: flex;
+  justify-content: space-between;
+}

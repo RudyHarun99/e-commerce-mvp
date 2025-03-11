@@ -8,7 +8,7 @@ import CartImage from '@/assets/shopping-cart.png';
 
 export const Navbar: React.FC = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.navbarContainer}>
       <Logo />
       <CategoryList />
       <Searchbar />

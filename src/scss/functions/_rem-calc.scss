@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use "sass:list";
 
-$rem-base: 16px;
+$rem-base: 20px;
 
 @function strip-unit($num) {
   @return math.div($num, ($num * 0 + 1));

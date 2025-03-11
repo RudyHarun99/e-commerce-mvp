@@ -1,0 +1,12 @@
+.sectionProduct {
+  width: rem-calc(1200);
+  height: rem-calc(1353.6);
+  gap: rem-calc(48);
+  border: 1px solid get-color('neutral', 300);
+
+  .textProduct {
+    height: rem-calc(38);
+    color: get-color('neutral', 950);
+    @include typography('display-sm', 'bold');
+  }
+}

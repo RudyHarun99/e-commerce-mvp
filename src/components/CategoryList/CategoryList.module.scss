@@ -1,0 +1,32 @@
+.categoryList {
+  width: rem-calc(120);
+  height: rem-calc(44);
+  gap: rem-calc(6);
+  border-radius: get-radius('radius-xl');
+  border-width: 1px;
+  padding: rem-calc(8) rem-calc(16);
+  border: 1px solid get-color('neutral', 300);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  .grid {
+    width: rem-calc(20);
+    height: rem-calc(20);
+
+    .gridImage {
+      width: rem-calc(15);
+      height: rem-calc(15);
+      margin-top: rem-calc(2.5);
+      margin-left: rem-calc(2.5);
+      border: 1.67px solid var('neutral', 950);
+    }
+  }
+
+  .categoryText {
+    width: rem-calc(62);
+    height: rem-calc(28);
+    color: get-color('neutral', 950);
+    @include typography('text-sm', 'regular');
+  }
+}
