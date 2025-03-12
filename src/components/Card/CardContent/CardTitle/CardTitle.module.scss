@@ -1,0 +1,9 @@
+.cardTitle {
+  color: get-color('neutral', 950);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  @include typography('text-md', 'regular');
+}

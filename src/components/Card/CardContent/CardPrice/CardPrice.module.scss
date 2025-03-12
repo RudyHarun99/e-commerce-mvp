@@ -1,0 +1,4 @@
+.cardPrice {
+  color: get-color('neutral', 950);
+  @include typography('text-lg', 'bold');
+}

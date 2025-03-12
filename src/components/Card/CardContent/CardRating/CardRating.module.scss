@@ -1,0 +1,26 @@
+.cardRating {
+  width: rem-calc(51);
+  height: rem-calc(30);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  
+  .cardRatingStar {
+    width: rem-calc(24);
+    height: rem-calc(24);
+
+    .starIcon {
+      width: rem-calc(17.2);
+      height: rem-calc(16.4);
+      margin-top: rem-calc(3.57);
+      margin-left: rem-calc(3.44);
+    }
+  }
+
+  .cardRatingNumber {
+    width: rem-calc(25);
+    height: rem-calc(30);
+    @include typography('text-md', 'regular');
+  }
+}

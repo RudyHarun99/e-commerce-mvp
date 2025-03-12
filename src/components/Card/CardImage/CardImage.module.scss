@@ -1,0 +1,11 @@
+.cardImageContainer {
+  width: rem-calc(227.2);
+  height: rem-calc(227.2);
+  border-radius: get-radius('radius-md');
+  overflow: hidden;
+
+  .cardImage {
+    width: 100%;
+    height: 100%;
+  }
+}

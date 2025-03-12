@@ -1,0 +1,7 @@
+.card {
+  width: rem-calc(227);
+  height: rem-calc(385);
+  border-radius: get-radius('radius-xl');
+  box-shadow: 0 0 rem-calc(20) 0 #CBCACA40;
+  cursor: pointer;
+}

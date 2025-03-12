@@ -2,11 +2,27 @@
   width: rem-calc(1200);
   height: rem-calc(1353.6);
   gap: rem-calc(48);
-  border: 1px solid get-color('neutral', 300);
 
   .textProduct {
     height: rem-calc(38);
     color: get-color('neutral', 950);
+    margin-bottom: rem-calc(24);
     @include typography('display-sm', 'bold');
+  }
+
+  .listProduct {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: rem-calc(16);
+    row-gap: rem-calc(24);
+  }
+
+  .footerProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: rem-calc(48);
   }
 }
