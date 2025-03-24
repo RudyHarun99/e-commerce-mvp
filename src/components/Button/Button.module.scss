@@ -4,6 +4,17 @@
   padding: rem-calc(8);
   gap: rem-calc(8);
   border-radius: get-radius('radius-full');
-  background: get-color('primary', 300);
+  background: $white;
   cursor: pointer;
+  @include typography('text-sm', 'semibold');
+
+  &.primary {
+    color: $white;
+    background: get-color('primary', 300);
+  }
+
+  &.secondary {
+    color: get-color('neutral', 950);
+    border: 1px solid get-color('neutral', 300);
+  }
 }

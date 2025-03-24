@@ -7,7 +7,7 @@ export const Searchbar: React.FC = () => {
     <div className={styles.searchbar}>
       <img
         src={SearchImage}
-        alt="serach image"
+        alt="search image"
         className={styles.searchImage}
       />
       <input

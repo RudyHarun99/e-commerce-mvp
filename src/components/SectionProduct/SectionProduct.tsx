@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './SectionProduct.module.scss';
 import { useGetProducts } from '@/hooks/useGetProducts';
 import { Card } from '@/components/Card';
@@ -7,7 +7,12 @@ import { Link } from 'react-router-dom';
 
 export const SectionProduct: React.FC = () => {
   const { results, isFetching } = useGetProducts();
-  const showData = results.slice(0, 15);
+  const [ visibleItemCount, setVisibleItemCount ] = useState(15);
+  const showData = results.slice(0, visibleItemCount);
+
+  const buttonLoadMore = () => {
+    setVisibleItemCount(prevCount => prevCount + 15);
+  };
 
   return (
     <div className={styles.sectionProduct}>
@@ -41,7 +46,12 @@ export const SectionProduct: React.FC = () => {
         </div>
       }
       <div className={styles.footerProduct}>
-        <Button />
+        <Button
+          type='secondary'
+          onClick={buttonLoadMore}
+        >
+          Load More
+        </Button>
       </div>
     </div>
   );

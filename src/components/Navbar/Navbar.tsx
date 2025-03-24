@@ -7,6 +7,14 @@ import { Button } from '@/components/Button';
 import CartImage from '@/assets/shopping-cart.png';
 
 export const Navbar: React.FC = () => {
+  const buttonLogin = () => {
+    console.log('Login');
+  };
+
+  const buttonRegister = () => {
+    console.log('Register');
+  };
+
   return (
     <div className={styles.navbarContainer}>
       <Logo />
@@ -17,8 +25,18 @@ export const Navbar: React.FC = () => {
         alt="cart image"
         className={styles.imageCart}
       />
-      <Button />
-      <Button />
+      <Button
+        type='secondary'
+        onClick={buttonLogin}
+      >
+        Login
+      </Button>
+      <Button
+        type='primary'
+        onClick={buttonRegister}
+      >
+        Register
+      </Button>
     </div>
   );
 };

@@ -1,0 +1,34 @@
+.container {
+  width: rem-calc(380);
+  height: rem-calc(278);
+  gap: get-spacing('spacing-3xl');
+  display: flex;
+  flex-direction: column;
+  // border: 1px solid get-color('neutral', 300);
+
+  .description {
+    color: get-color('neutral', 950);
+    @include typography('text-sm', 'regular');
+  }
+
+  .contact {
+    width: rem-calc(196);
+    height: rem-calc(90);
+    gap: get-spacing('spacing-lg');
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      color: get-color('neutral', 950);
+      @include typography('text-md', 'semibold');
+    }
+
+    .listIcon {
+      width: rem-calc(196);
+      height: rem-calc(40);
+      display: flex;
+      flex-direction: row;
+      gap: get-spacing('spacing-lg');
+    }
+  }
+}

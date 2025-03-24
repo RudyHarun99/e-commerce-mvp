@@ -1,0 +1,17 @@
+.footerMenu {
+  width: rem-calc(200);
+  min-height: rem-calc(180);
+  gap: get-spacing('spacing-2xl');
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    color: get-color('neutral', 950);
+    @include typography('text-md', 'semibold');
+  }
+
+  .menuItem {
+    color: get-color('neutral', 950);
+    @include typography('text-md', 'regular');
+  }
+}
