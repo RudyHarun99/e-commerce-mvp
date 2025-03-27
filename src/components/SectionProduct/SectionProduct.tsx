@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import styles from './SectionProduct.module.scss';
-import { useGetProducts } from '@/hooks/useGetProducts';
-import { Card } from '@/components/Card';
-import { Button } from '@/components/Button';
+import { useAppSelector } from '@/services/redux';
+import {
+  productSelector,
+  isFetchingSelector,
+} from '@/services/redux/product.selectors';
+import { Card, Button } from '@/components';
 import { Link } from 'react-router-dom';
 
 export const SectionProduct: React.FC = () => {
-  const { results, isFetching } = useGetProducts();
+  const { products } = useAppSelector(productSelector);
+  const isFetching = useAppSelector(isFetchingSelector);
   const [ visibleItemCount, setVisibleItemCount ] = useState(15);
-  const showData = results.slice(0, visibleItemCount);
+  const showData = products.slice(0, visibleItemCount);
 
   const buttonLoadMore = () => {
     setVisibleItemCount(prevCount => prevCount + 15);
@@ -45,14 +49,17 @@ export const SectionProduct: React.FC = () => {
           }
         </div>
       }
-      <div className={styles.footerProduct}>
-        <Button
-          type='secondary'
-          onClick={buttonLoadMore}
-        >
-          Load More
-        </Button>
-      </div>
+      {
+        showData.length < products.length &&
+        <div className={styles.footerProduct}>
+          <Button
+            type='secondary'
+            onClick={buttonLoadMore}
+          >
+            Load More
+          </Button>
+        </div>
+      }
     </div>
   );
 };

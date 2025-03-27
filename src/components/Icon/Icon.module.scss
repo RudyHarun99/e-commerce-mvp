@@ -1,7 +1,37 @@
-.icon {
+.iconContainer {
   width: rem-calc(40);
   height: rem-calc(40);
   border-radius: get-radius('radius-full');
   border: 1px solid get-color('neutral', 300);
-  color: get-color('primary', 300);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.facebook {
+    width: rem-calc(10.83);
+    height: rem-calc(20.02);
+    top: rem-calc(10.04);
+    left: rem-calc(14.8);
+  }
+
+  &.twitter {
+    width: rem-calc(20.01);
+    height: rem-calc(20.02);
+    top: rem-calc(10.04);
+    left: rem-calc(10);
+  }
+
+  &.instagram {
+    width: rem-calc(16.74);
+    height: rem-calc(16.01);
+    top: rem-calc(12.09);
+    left: rem-calc(11.6);
+  }
+
+  &.youtube {
+    width: rem-calc(17.04);
+    height: rem-calc(19.66);
+    top: rem-calc(10.05);
+    left: rem-calc(11.36);
+  }
 }

@@ -1,0 +1,53 @@
+.detailContainer {
+  width: rem-calc(1204);
+  height: rem-cal(588);
+  gap: get-spacing('spacing-5xl');
+  display: flex;
+  flex-direction: column;
+  border: 1px solid get-color('neutral', 200);
+
+  .detailPath {
+    // width: rem-calc(493);
+    width: auto;
+    height: rem-calc(28);
+    gap: get-spacing('spacing-md');
+    border: 1px solid get-color('neutral', 200);
+    display: flex;
+
+    .home {
+      color: get-color('primary', 300);
+    }
+
+    .detail {
+      color: get-color('primary', 300);
+    }
+  }
+
+  .detailInfo {
+    width: auto;
+    height: rem-calc(536);
+    gap: get-spacing('spacing-3xl');
+    display: flex;
+
+    .detailImageContainer {
+      width: rem-calc(400);
+      height: rem-calc(400);
+      border-radius: get-radius('radius-md');
+      overflow: hidden;
+
+      .detailImage {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .detailContent {
+      width: rem-calc(780);
+      height: rem-calc(536);
+      gap: get-spacing('spacing-3xl');
+      border: 1px solid get-color('neutral', 200);
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

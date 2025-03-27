@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './FooterContact.module.scss';
-import { Logo } from '@/components/Logo';
-import { Icon } from '@/components/Icon';
+import { Logo, Icon } from '@/components';
 import FacebookIcon from '@/assets/Facebook.png';
 import InstagramIcon from '@/assets/Instagram.png';
 import LinkedinIcon from '@/assets/Linkedin.png';
@@ -19,10 +18,26 @@ export const FooterContact: React.FC = () => {
           Follow on Social Media
         </div>
         <div className={styles.listIcon}>
-          <Icon src={FacebookIcon} alt='facebook icon' />
-          <Icon src={InstagramIcon} alt='instagram icon' />
-          <Icon src={LinkedinIcon} alt='linkedin icon' />
-          <Icon src={TikTokIcon} alt='tiktok icon' />
+          <Icon
+            src={FacebookIcon}
+            alt='facebook icon'
+            type='facebook'
+          />
+          <Icon
+            src={InstagramIcon}
+            alt='instagram icon'
+            type='instagram'
+          />
+          <Icon
+            src={LinkedinIcon}
+            alt='linkedin icon'
+            type='linkedin'
+          />
+          <Icon
+            src={TikTokIcon}
+            alt='tiktok icon'
+            type='tiktok'
+          />
         </div>
       </div>
     </div>

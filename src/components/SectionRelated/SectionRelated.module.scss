@@ -1,0 +1,20 @@
+.sectionRelated {
+  width: rem-calc(1200);
+  min-height: rem-calc(440.8);
+  gap: get-spacing('spacing-3xl');
+
+  .textRelated {
+    height: rem-calc(38);
+    color: get-color('neutral', 950);
+    margin-bottom: rem-calc(24);
+    @include typography('display-sm', 'bold');
+  }
+
+  .listRelated {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: rem-calc(16);
+    row-gap: rem-calc(24);
+  }
+}

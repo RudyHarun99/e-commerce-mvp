@@ -1,20 +1,12 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setProducts } from "@/services/redux/product.slice";
+import { useAppDispatch } from "@/services/redux";
+import { setProducts, setIsFetching, setError } from "@/services/redux/product.slice";
 import { useQuery } from "@tanstack/react-query";
 import { getProducts, ProductsQueryKey } from "@/api/getProducts";
-import { Product } from "@/models/product";
 import { ZodError } from "zod";
 
-type UseGetProductsReturn = {
-  results: Product[];
-  isFetching: boolean;
-  error: Error | null;
-  queryKey: ProductsQueryKey;
-};
-
-export const useGetProducts = (): UseGetProductsReturn => {
-  const dispatch = useDispatch();
+export const useGetProducts = () => {
+  const dispatch = useAppDispatch();
   const queryKey: ProductsQueryKey = [ 'products' ];
 
   const { data, error, isFetching } = useQuery({
@@ -34,12 +26,7 @@ export const useGetProducts = (): UseGetProductsReturn => {
 
   useEffect(() => {
     dispatch(setProducts(results));
+    dispatch(setIsFetching(isFetching));
+    dispatch(setError(error?.message ?? null));
   }, [data]);
-
-  return {
-    results,
-    isFetching,
-    error,
-    queryKey,
-  };
 };
