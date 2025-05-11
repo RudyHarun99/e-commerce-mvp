@@ -28,12 +28,14 @@ export const Navbar: React.FC = () => {
         className={styles.imageCart}
       />
       <Button
+        variant='large'
         type='secondary'
         onClick={buttonLogin}
       >
         Login
       </Button>
       <Button
+        variant='large'
         type='primary'
         onClick={buttonRegister}
       >
