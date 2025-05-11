@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { Card } from '@/components';
 
 export const SectionRelated: React.FC = () => {
-  const { products } = useAppSelector(productSelector);
+  const products = useAppSelector(productSelector);
   const showData = products.slice(0, 5);
   
   return (

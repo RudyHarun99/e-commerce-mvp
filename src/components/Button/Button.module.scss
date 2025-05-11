@@ -1,12 +1,19 @@
 .btn {
   width: rem-calc(147);
-  height: rem-calc(40);
   padding: rem-calc(8);
   gap: rem-calc(8);
   border-radius: get-radius('radius-full');
   background: $white;
   cursor: pointer;
   @include typography('text-sm', 'semibold');
+
+  &.large {
+    height: rem-calc(44);
+  }
+
+  &.small {
+    height: rem-calc(40);
+  }
 
   &.primary {
     color: $white;

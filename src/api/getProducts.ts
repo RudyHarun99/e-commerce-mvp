@@ -3,12 +3,8 @@ import { customAxios } from ".";
 import { z } from "zod";
 import { productSchema } from "@/models/product";
 
-export type ProductsQueryKey = [
-  string,
-];
-
+export type ProductsQueryKey = [ string, ];
 export const productResponseSchema = z.array(productSchema);
-
 export type ProductResponse = z.infer<typeof productResponseSchema>;
 
 export const getProducts: QueryFunction<ProductResponse, ProductsQueryKey> = async ({

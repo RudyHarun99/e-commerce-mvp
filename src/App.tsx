@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { useGetProducts } from './hooks/useGetProducts';
+import { useGetProducts } from './hooks';
 import { Navbar, Footer } from './components';
 import { Home, Detail } from './pages';
 

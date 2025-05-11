@@ -1,3 +1,5 @@
+@use '@/scss/functions/get-color' as c;
+
 .base-background {
-  background: get-color('neutral', 900);
+  background: c.get-color('neutral', 900);
 }

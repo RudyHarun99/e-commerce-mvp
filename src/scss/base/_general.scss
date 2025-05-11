@@ -1,10 +1,10 @@
-// @import '../variables/fonts';
-// @import '../functions/rem-calc';
-// @import '../mixins/typography';
+@use '@/scss/variables/fonts' as f;
+@use '@/scss/functions/rem-calc' as *;
+@use '@/scss/mixins/typography' as t;
 
 :root {
-  font-family: $font-primary;
-  @include typography('text-md', 'regular');
+  font-family: f.$font-primary;
+  @include t.typography('text-md', 'regular');
 }
 
 body {

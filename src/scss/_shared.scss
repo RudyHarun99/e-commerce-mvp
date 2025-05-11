@@ -1,4 +1,4 @@
-@import 'tailwindcss';
-@import 'functions';
-@import 'mixins';
-@import 'variables';
+@forward 'tailwindcss';
+@forward 'functions';
+@forward 'mixins';
+@forward 'variables';

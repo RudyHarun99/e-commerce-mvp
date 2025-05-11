@@ -1,11 +1,11 @@
 @use "sass:map";
-@import '../variables/colors';
+@use '@/scss/variables/colors' as c;
 
 @function get-color($type, $level) {
-  @if map.has-key($colors, $type) and
-    map.has-key(map.get($colors, $type), $level)
+  @if map.has-key(c.$colors, $type) and
+    map.has-key(map.get(c.$colors, $type), $level)
   {
-    @return map.get(map.get($colors, $type), $level);
+    @return map.get(map.get(c.$colors, $type), $level);
   } @else {
     @warn 'Invalid color type or level';
     @return null;

@@ -1,5 +1,6 @@
 // prettier-ignore
 @use "sass:map";
+@use "@/scss/functions/rem-calc" as *;
 
 $sizes: (
   "display-3xl": (font-size: rem-calc(60), line-height: rem-calc(72), letter-spacing: -0.02em),

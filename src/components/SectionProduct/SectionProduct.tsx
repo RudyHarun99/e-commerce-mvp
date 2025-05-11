@@ -9,7 +9,7 @@ import { Card, Button } from '@/components';
 import { Link } from 'react-router-dom';
 
 export const SectionProduct: React.FC = () => {
-  const { products } = useAppSelector(productSelector);
+  const products = useAppSelector(productSelector);
   const isFetching = useAppSelector(isFetchingSelector);
   const [ visibleItemCount, setVisibleItemCount ] = useState(15);
   const showData = products.slice(0, visibleItemCount);
@@ -27,20 +27,22 @@ export const SectionProduct: React.FC = () => {
         <div className={styles.listProduct}>
           {
             showData.map(product => {
+              const { id, image, title, price, rating } = product;
+
               return (
                 <Link
-                  key={product.id}
-                  to={`/detail/${product.id}`}
+                  key={id}
+                  to={`/detail/${id}`}
                 >
                   <Card>
                     <Card.Image
-                      src={`${product.image}`}
+                      src={`${image}`}
                       alt='product image'
                     />
                     <Card.Content>
-                      <Card.Title title={product.title} />
-                      <Card.Price price={product.price} />
-                      <Card.Rating rating={product.rating.rate} />
+                      <Card.Title title={title} />
+                      <Card.Price price={price} />
+                      <Card.Rating rating={rating.rate} />
                     </Card.Content>
                   </Card>
                 </Link>
@@ -53,6 +55,7 @@ export const SectionProduct: React.FC = () => {
         showData.length < products.length &&
         <div className={styles.footerProduct}>
           <Button
+            variant='large'
             type='secondary'
             onClick={buttonLoadMore}
           >
