@@ -49,9 +49,119 @@
       width: rem-calc(780);
       height: rem-calc(536);
       gap: get-spacing('spacing-3xl');
-      border: 1px solid get-color('neutral', 200);
       display: flex;
       flex-direction: column;
+      // border: 1px solid get-color('neutral', 200);
+
+      .detailHeader {
+        // width: rem-calc(780);
+        // height: rem-calc(148);
+        gap: get-spacing('spacing-sm');
+        
+        .detailCat {
+          color: get-color('neutral', 600);
+          @include typography('text-sm', 'regular');
+        }
+
+        .detailTitle {
+          color: get-color('neutral', 950);
+          @include typography('text-xl', 'semibold');
+        }
+
+        .detailPrice {
+          color: get-color('neutral', 950);
+          @include typography('display-xs', 'bold');
+        }
+
+        .detailRate {
+          display: flex;
+          flex-direction: row;
+          gap: get-spacing('spacing-md');
+
+          .ratingStar {
+            width: rem-calc(24);
+            height: rem-calc(24);
+            margin: rem-calc(4) 0;
+        
+            .starIcon {
+              width: rem-calc(17.2);
+              height: rem-calc(16.4);
+              margin-top: rem-calc(3.57);
+              margin-left: rem-calc(3.44);
+            }
+          }
+
+          .rate {
+            color: get-color('neutral', 950);
+            @include typography('text-lg', 'semibold');
+          }
+
+          .count {
+            color: get-color('neutral', 950);
+            @include typography('text-lg', 'regular');
+          }
+        }
+      }
+
+      .description {
+        border-top: 1px solid get-color('neutral', 300);
+        border-bottom: 1px solid get-color('neutral', 300);
+        padding: rem-calc(24) 0;
+        gap: get-spacing('spacing-md');
+        color: get-color('neutral', 950);
+
+        .descTitle{
+          @include typography('text-lg', 'semibold');
+          margin-bottom: get-spacing('spacing-md');
+        }
+
+        .descContent{
+          width: rem-calc(780);
+          height: rem-calc(140);
+          @include typography('text-sm', 'regular');
+        }
+      }
+
+      .detailFooter {
+
+        .detailQuantity {
+          display: flex;
+          flex-direction: row;
+          gap: get-spacing('spacing-xl');
+          margin-bottom: get-spacing('spacing-3xl');
+
+          p {
+            color: get-color('neutral', 900);
+            @include typography('text-md', 'bold');
+          }
+
+          .quantityButton {
+            display: flex;
+            flex-direction: row;
+            gap: get-spacing('spacing-md');
+            border: 1px solid get-color('neutral', 300,);
+            border-radius: get-radius('radius-xl');
+            padding: 0 get-spacing('spacing-lg');
+            gap: get-spacing('spacing-xl');
+
+            .quantButton {
+              width: rem-calc(24);
+              height: rem-calc(24);
+            }
+
+            .quantNum {
+              width: rem-calc(32);
+              height: rem-calc(30);
+            }
+          }
+        }
+
+        .detailButton {
+          display: flex;
+          flex-direction: row;
+          gap: get-spacing('spacing-lg');
+        }
+      }
     }
   }
 }

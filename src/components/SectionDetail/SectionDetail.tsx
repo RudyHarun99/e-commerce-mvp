@@ -8,6 +8,7 @@ import {
 } from '@/services/redux/product.selectors';
 import DefaultImage from '@/assets/DefaultImage.png';
 import { Button } from '@/components';
+import Star from '@/assets/Star.png';
 
 export const SectionDetail: React.FC = () => {
   useGetProductDetail();
@@ -21,16 +22,22 @@ export const SectionDetail: React.FC = () => {
     rating,
     description
   } = product || {};
-  const [ quantity, setQuantity ] = useState(0);
+  const MIN_VALUE = 0;
+  const [ quantity, setQuantity ] = useState(MIN_VALUE);
+
+  const increment = () => setQuantity(prev => prev + 1);
+  const decrement = () => setQuantity(
+    prev => (prev > MIN_VALUE ? prev - 1 : MIN_VALUE)
+  );
 
   const buttonAddCart = () => {
-    setQuantity(prevQuantity => prevQuantity + 1);
+    console.log('buttonAddCart'); 
   };
 
   const buttonBuyNow = () => {
     console.log('Buy Now');
   };
-
+   
   return (
     <div className={styles.detailContainer}>
       {/* <pre>{JSON.stringify(product, null, 4)}</pre> */}
@@ -55,31 +62,61 @@ export const SectionDetail: React.FC = () => {
             </div>
             <div className={styles.detailContent}>
               <div className={styles.detailHeader}>
-                <div>{category}</div>
-                <div>{title}</div>
-                <div>${price}</div>
-                <div>{`${rating?.rate} (${rating?.count})`}</div>
+                <div className={styles.detailCat}>
+                  {category}
+                </div>
+                <div className={styles.detailTitle}>
+                  {title}
+                </div>
+                <div className={styles.detailPrice}>
+                  ${price}
+                </div>
+                <div className={styles.detailRate}>
+                  <span className={styles.ratingStar}>
+                    <img
+                      src={Star}
+                      alt="star icon"
+                      className={styles.starIcon}
+                    />
+                  </span>
+                  <span className={styles.rate}>
+                    {rating?.rate}
+                  </span>
+                  <span className={styles.count}>
+                    ({rating?.count})
+                  </span>
+                </div>
               </div>
               <div className={styles.description}>
-                <p>Description</p>
-                <p>{description}</p>
+                <p className={styles.descTitle}>
+                  Description
+                </p>
+                <p className={styles.descContent}>
+                  {description}
+                </p>
               </div>
               <div className={styles.detailFooter}>
-                <p>Quantity</p>
-                <div>
-                  <div
-                    onClick={() => setQuantity(prevQuantity => prevQuantity - 1)}
-                  >
-                    -
-                  </div>
-                  <span>{quantity}</span>
-                  <div
-                    onClick={() => setQuantity(prevQuantity => prevQuantity + 1)}
-                  >
-                    +
+                <div className={styles.detailQuantity}>
+                  <p>Quantity</p>
+                  <div className={styles.quantityButton}>
+                    <div
+                      onClick={decrement}
+                      className={styles.quantButton}
+                    >
+                      -
+                    </div>
+                    <span className={styles.quantNum}>
+                      {quantity}
+                    </span>
+                    <div
+                      onClick={increment}
+                      className={styles.quantButton}
+                    >
+                      +
+                    </div>
                   </div>
                 </div>
-                <div>
+                <div className={styles.detailButton}>
                   <Button
                     variant='large'
                     type='secondary'

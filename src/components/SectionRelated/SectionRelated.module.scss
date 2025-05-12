@@ -13,8 +13,6 @@
   .listRelated {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     column-gap: rem-calc(16);
-    row-gap: rem-calc(24);
   }
 }
