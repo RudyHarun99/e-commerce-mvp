@@ -5,13 +5,25 @@ import { productSelector } from '@/services/redux/product.selectors';
 import { Link } from 'react-router-dom';
 import { Card } from '@/components';
 
-export const SectionRelated: React.FC = () => {
+type SectionRelatedProps = {
+  viewDetail: boolean;
+};
+
+export const SectionRelated: React.FC<SectionRelatedProps> = ({
+  viewDetail = true,
+}) => {
   const products = useAppSelector(productSelector);
   const showData = products.slice(0, 5);
   
   return (
     <div className={styles.sectionRelated}>
-      <p className={styles.textRelated}>Related Product</p>
+      {
+        viewDetail
+        ?
+        <p className={styles.textRelated}>Related Product</p>
+        :
+        <p className={styles.textRelated}>Recommended Product</p>
+      }
       <div className={styles.listRelated}>
         {
           showData.map((product, idx) => {

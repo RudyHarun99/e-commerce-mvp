@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './SectionDetail.module.scss';
-import { useGetProductDetail } from '@/hooks';
 import { useAppSelector } from '@/services/redux';
 import {
   productDetailSelector,
@@ -11,7 +10,6 @@ import { Button } from '@/components';
 import Star from '@/assets/Star.png';
 
 export const SectionDetail: React.FC = () => {
-  useGetProductDetail();
   const product = useAppSelector(productDetailSelector);
   const isFetching = useAppSelector(isFetchingSelector);
   const {

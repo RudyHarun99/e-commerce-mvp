@@ -6,6 +6,7 @@ export { Footer } from './Footer';
 export { Icon } from './Icon';
 export { Logo } from './Logo';
 export { Navbar } from './Navbar';
+export { NotFound } from './NotFound';
 export { Searchbar } from './Searchbar';
 export { SectionDetail } from './SectionDetail';
 export { SectionProduct } from './SectionProduct';

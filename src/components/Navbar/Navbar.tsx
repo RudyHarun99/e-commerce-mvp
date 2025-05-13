@@ -8,7 +8,15 @@ import {
 } from '@/components';
 import CartImage from '@/assets/shopping-cart.png';
 
-export const Navbar: React.FC = () => {
+type NavbarProps = {
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+};
+
+export const Navbar: React.FC<NavbarProps> = ({
+  searchQuery,
+  setSearchQuery
+}) => {
   const buttonLogin = () => {
     console.log('Login');
   };
@@ -21,7 +29,11 @@ export const Navbar: React.FC = () => {
     <div className={styles.navbarContainer}>
       <Logo />
       <CategoryList />
-      <Searchbar />
+      <Searchbar
+        value={searchQuery}
+        placeholder='Search'
+        onChange={setSearchQuery}
+      />
       <img
         src={CartImage}
         alt="cart image"

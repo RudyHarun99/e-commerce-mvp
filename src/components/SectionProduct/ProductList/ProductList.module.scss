@@ -1,0 +1,34 @@
+.sectionProduct {
+  width: rem-calc(1200);
+  gap: rem-calc(48);
+
+  .textProduct {
+    height: rem-calc(38);
+    margin-bottom: rem-calc(24);
+    color: get-color('neutral', 950);
+    @include typography('display-sm', 'bold');
+  }
+
+  .textProductSearch {
+    height: rem-calc(38);
+    margin-bottom: rem-calc(24);
+    color: get-color('neutral', 950);
+    @include typography('text-xl', 'bold');
+  }
+  
+  .listProduct {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    // grid-template-rows: repeat(3, 1fr);
+    column-gap: rem-calc(16);
+    row-gap: rem-calc(24);
+  }
+  
+  .footerProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: rem-calc(48);
+  }
+}

@@ -2,7 +2,17 @@ import React from 'react';
 import styles from './Searchbar.module.scss';
 import SearchImage from '@/assets/Search.png';
 
-export const Searchbar: React.FC = () => {
+type SearchInputProps = {
+  value: string;
+  placeholder?: string;
+  onChange: (query: string) => void;
+};
+
+export const Searchbar: React.FC<SearchInputProps> = ({
+  value,
+  placeholder = "Search",
+  onChange
+}) => {
   return (
     <div className={styles.searchbar}>
       <img
@@ -12,8 +22,11 @@ export const Searchbar: React.FC = () => {
       />
       <input
         type="text"
-        placeholder='Search'
+        placeholder={placeholder}
         className={styles.searchInput}
+        onChange={(e) => onChange(e.target.value)}
+        name='product'
+        value={value}
       />
     </div>
   );
