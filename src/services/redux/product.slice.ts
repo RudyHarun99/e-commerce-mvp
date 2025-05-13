@@ -16,6 +16,7 @@ type ProductItem = {
 type ProductState = {
   products: ProductItem[],
   productDetail: ProductItem,
+  categories: string[],
   isFetching: boolean,
   error: null | string,
 }
@@ -34,6 +35,7 @@ const initialState: ProductState = {
       count: 0,
     }
   },
+  categories: [],
   isFetching: false,
   error: null,
 };
@@ -48,6 +50,9 @@ export const productSlice = createSlice({
     setDetail: (state, action) => {
       state.productDetail = action.payload;
     },
+    setCategories: (state, action) => {
+      state.categories = [ ...state.categories, ...action.payload ];
+    },
     setIsFetching: (state, action) => {
       state.isFetching = action.payload;
     },
@@ -60,6 +65,7 @@ export const productSlice = createSlice({
 export const {
   setProducts,
   setDetail,
+  setCategories,
   setIsFetching,
   setError,
 } = productSlice.actions;

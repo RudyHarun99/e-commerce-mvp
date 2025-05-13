@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import styles from './SectionProduct.module.scss';
 import { useAppSelector } from '@/services/redux';
 import {
   productSelector,
@@ -9,21 +8,36 @@ import { ProductList } from './ProductList';
 import { ProductNotFound } from './ProductNotFound';
 
 type SectionProductProps = {
-  searchQuery: string;
+  searchQueryByTitle: string;
+  searchQueryByCategory: string;
 };
 
 export const SectionProduct: React.FC<SectionProductProps> = ({
-  searchQuery,
+  searchQueryByTitle,
+  searchQueryByCategory,
 }) => {
   const products = useAppSelector(productSelector);
   const isFetching = useAppSelector(isFetchingSelector);
   const [ visibleItemCount, setVisibleItemCount ] = useState(15);
-  const lower = searchQuery.toLowerCase();
-  const filtered = searchQuery ?
-    products.filter((product) =>
+  
+  const filterProducts = () => {
+    if (searchQueryByTitle) {
+      const lower = searchQueryByTitle.toLowerCase();
+      return products.filter((product) =>
         product.title.toLowerCase().includes(lower)
-    ) :
-    products;
+      );
+    };
+
+    if (searchQueryByCategory) {
+      return products.filter((product) =>
+        product.category === searchQueryByCategory
+      );
+    };
+
+    return products;
+  }
+
+  const filtered = filterProducts();
   const visibleProducts = filtered.slice(0, visibleItemCount);
 
   const buttonLoadMore = () => {
@@ -39,15 +53,19 @@ export const SectionProduct: React.FC<SectionProductProps> = ({
           {
             visibleProducts.length > 0 ? (
               <ProductList
-                searchQuery={searchQuery}
+                searchQuery={ searchQueryByTitle || searchQueryByCategory }
                 filtered={filtered}
                 visibleItemCount={visibleItemCount}
                 visibleProducts={visibleProducts}
-                viewAll={ searchQuery ? false : true }
+                viewAll={
+                  searchQueryByTitle || searchQueryByCategory ?
+                  false :
+                  true
+                }
                 buttonLoadMore={buttonLoadMore}
               />
             ) : (
-              <ProductNotFound searchQuery={searchQuery} />
+              <ProductNotFound searchQuery={searchQueryByTitle} />
             )
           }
         </>

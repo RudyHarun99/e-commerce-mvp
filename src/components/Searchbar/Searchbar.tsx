@@ -2,13 +2,13 @@ import React from 'react';
 import styles from './Searchbar.module.scss';
 import SearchImage from '@/assets/Search.png';
 
-type SearchInputProps = {
+type SearchbarProps = {
   value: string;
   placeholder?: string;
   onChange: (query: string) => void;
 };
 
-export const Searchbar: React.FC<SearchInputProps> = ({
+export const Searchbar: React.FC<SearchbarProps> = ({
   value,
   placeholder = "Search",
   onChange

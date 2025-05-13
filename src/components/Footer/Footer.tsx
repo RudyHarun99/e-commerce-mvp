@@ -3,7 +3,13 @@ import styles from './Footer.module.scss';
 import { FooterContact } from './FooterContact';
 import { FooterMenu } from './FooterMenu';
 
-export const Footer: React.FC = () => {
+type FooterProps = {
+  handleClick: () => void;
+};
+
+export const Footer: React.FC<FooterProps> = ({
+  handleClick,
+}) => {
   const aboutMenu = [
     'About Us',
     'Terms and Condition',
@@ -19,7 +25,7 @@ export const Footer: React.FC = () => {
 
   return (
     <div className={styles.footerContainer}>
-      <FooterContact />
+      <FooterContact handleClick={handleClick} />
       <FooterMenu
         title="E-Commerce"
         menu={aboutMenu}

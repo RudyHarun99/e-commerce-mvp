@@ -1,19 +1,22 @@
 import React from 'react';
 import styles from './Home.module.scss';
-// import { Banner, SectionProduct } from '@/components';
 import { SectionProduct } from '@/components';
 
 type HomeProps = {
-  searchQuery: string;
+  searchQueryByTitle: string;
+  searchQueryByCategory: string;
 };
 
 export const Home: React.FC<HomeProps> = ({
-  searchQuery,
+  searchQueryByTitle,
+  searchQueryByCategory,
 }) => {
   return (
     <div className={styles.content}>
-      {/* <Banner /> */}
-      <SectionProduct searchQuery={searchQuery} />
+      <SectionProduct
+        searchQueryByTitle={searchQueryByTitle}
+        searchQueryByCategory={searchQueryByCategory}
+      />
     </div>
   );
 };

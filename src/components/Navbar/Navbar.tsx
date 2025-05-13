@@ -9,13 +9,17 @@ import {
 import CartImage from '@/assets/shopping-cart.png';
 
 type NavbarProps = {
-  searchQuery: string;
-  setSearchQuery: (query: string) => void;
+  searchQueryByTitle: string;
+  handleClick: () => void;
+  setSearchQueryByTitle: (query: string) => void;
+  setSearchQueryByCategory: (query: string) => void;
 };
 
 export const Navbar: React.FC<NavbarProps> = ({
-  searchQuery,
-  setSearchQuery
+  searchQueryByTitle,
+  handleClick,
+  setSearchQueryByTitle,
+  setSearchQueryByCategory,
 }) => {
   const buttonLogin = () => {
     console.log('Login');
@@ -27,12 +31,16 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <div className={styles.navbarContainer}>
-      <Logo />
-      <CategoryList />
+      <Logo
+        handleClick={handleClick}
+      />
+      <CategoryList
+        setSearchQueryByCategory={setSearchQueryByCategory}
+      />
       <Searchbar
-        value={searchQuery}
+        value={searchQueryByTitle}
         placeholder='Search'
-        onChange={setSearchQuery}
+        onChange={setSearchQueryByTitle}
       />
       <img
         src={CartImage}

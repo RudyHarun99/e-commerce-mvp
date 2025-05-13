@@ -3,9 +3,15 @@ import styles from './Logo.module.scss';
 import LogoImage from '@/assets/Logo.png';
 import { Link } from 'react-router-dom';
 
-export const Logo: React.FC = () => {
+type LogoProps = {
+  handleClick: () => void;
+}
+
+export const Logo: React.FC<LogoProps> = ({
+  handleClick,
+}) => {
   return (
-    <Link to='/'>
+    <Link to='/' onClick={handleClick}>
       <img
         src={LogoImage}
         alt="logo e-commerce"

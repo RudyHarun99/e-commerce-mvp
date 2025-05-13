@@ -6,25 +6,38 @@ import { Home, Detail } from './pages';
 
 export const App: React.FC = () => {
   useGetProducts();
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQueryByTitle, setSearchQueryByTitle] = useState('');
+  const [searchQueryByCategory, setSearchQueryByCategory] = useState('');
+
+  const handleClick = () => {
+    setSearchQueryByTitle('');
+    setSearchQueryByCategory('');
+  };
 
   return (
     <>
       <Navbar
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
+        searchQueryByTitle={searchQueryByTitle}
+        setSearchQueryByTitle={setSearchQueryByTitle}
+        setSearchQueryByCategory={setSearchQueryByCategory}
+        handleClick={handleClick}
       />
       <Routes>
         <Route
           path='/'
-          element={<Home searchQuery={searchQuery} />}
+          element={
+            <Home
+              searchQueryByTitle={searchQueryByTitle}
+              searchQueryByCategory={searchQueryByCategory}
+            />
+          }
         />
         <Route
           path='/detail/:id'
           element={<Detail />}
         />
       </Routes>
-      <Footer />
+      <Footer handleClick={handleClick} />
     </>
   );
 };

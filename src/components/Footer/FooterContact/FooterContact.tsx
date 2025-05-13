@@ -6,10 +6,16 @@ import InstagramIcon from '@/assets/Instagram.png';
 import LinkedinIcon from '@/assets/Linkedin.png';
 import TikTokIcon from '@/assets/TikTok.png';
 
-export const FooterContact: React.FC = () => {
+type FooterContactProps = {
+  handleClick: () => void;
+};
+
+export const FooterContact: React.FC<FooterContactProps> = ({
+  handleClick,
+}) => {
   return (
     <div className={styles.container}>
-      <Logo />
+      <Logo handleClick={handleClick} />
       <div className={styles.description}>
         Lorem ipsum dolor sit amet consectetur. Fusce cursus metus libero posuere sapien. Nulla cras nullam sed interdum orci ac et gravida.
       </div>
